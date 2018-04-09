@@ -1,0 +1,21 @@
+// Ref: https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+    
+}
+
+// Ref: https://css-tricks.com/snippets/sass/deep-getset-maps/
+@function map-deep-get($map, $keys...) {
+
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+    
+}

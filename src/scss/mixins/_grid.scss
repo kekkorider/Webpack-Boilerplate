@@ -1,0 +1,61 @@
+@mixin row($width: $global-width, $cf: true) {
+    width: 100%;
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @if ( $cf == true ) {
+        
+        &:before, 
+        &:after {
+            display: block;
+            content: "";
+            visibility: hidden;
+            height: 0;
+            clear: both;
+        }
+
+    }
+}
+
+
+@mixin columns($columns: $global-columns, $of: null, $gutter: null) {
+
+    // Setting default $of value
+    @if ( $of == null ) {
+        $of: $global-columns;
+    }
+
+    width: ($columns / $of) * 100%;
+    float: left;
+
+    // Gutters
+    @if ( $gutter != null ) {
+
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+
+    } @else {
+
+        padding-left: map-get($column-gutters, small) / 2;
+        padding-right: map-get($column-gutters, small) / 2;
+
+        @each $key, $value in $breakpoints {
+            @include breakpoint($key) {
+                padding-left: map-get($column-gutters, $key) / 2;
+                padding-right: map-get($column-gutters, $key) / 2;
+            }
+        }
+        
+    }
+}
+
+@mixin push-pull($columns: null, $of: $global-columns) {
+
+    @if ( $columns == null ) {
+        @error "$columns parameter is required";
+    }
+
+    margin-left: ($columns / $of) * 100%;
+
+}

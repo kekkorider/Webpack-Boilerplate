@@ -1,0 +1,21 @@
+// Headings font sizes
+@for $i from 1 through 6 {
+
+    h#{$i}, .h#{$i} {
+        font-family: $header-font-family;
+        font-size: map-deep-get($header-font-size, 'small', h#{$i});
+        margin: 0;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 2px;
+
+        @include breakpoint(medium) {
+            font-size: map-deep-get($header-font-size, 'medium', h#{$i})
+        }
+
+        @include breakpoint(large) {
+            font-size: map-deep-get($header-font-size, 'large', h#{$i})
+        }
+    }
+
+}

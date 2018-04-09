@@ -1,0 +1,45 @@
+@mixin breakpoint($bp, $dir: 'up') {
+
+    $cond: '';
+    
+    @if $dir == 'up' {
+        $cond: 'min-width';
+    } @else {
+        $cond: 'max-width';
+    }
+
+    /*
+     * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
+     * if it's a user defined breakpoint
+     */
+    @if type-of($bp) == 'number' {
+
+        @if $dir == 'down' {
+            $bp: $bp - 1px
+        }
+
+        @media screen and (#{$cond}: #{$bp}) {
+            @content;
+        }
+
+    } @else {
+
+        @each $key, $value in $breakpoints {
+
+            @if $bp == $key {
+
+                @if $dir == 'down' {
+                    $value: $value - 1px
+                }
+    
+                @media screen and (#{$cond}: #{$value}) {
+                    @content;
+                }
+    
+            }
+
+        }
+
+    }
+
+}
