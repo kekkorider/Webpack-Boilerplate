@@ -1,0 +1,11 @@
+.page-section {
+
+    &__inner {
+        @include row
+    }
+
+    &__header, 
+    &__content {
+        @include columns(1, 1)
+    }
+}

@@ -20,7 +20,13 @@
 /*
   * 5 - Timings
   */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
   margin: 0; }
 
 h1, .h1 {
@@ -126,5 +132,55 @@ h6, .h6 {
      * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
      * if it's a user defined breakpoint
      */ }
+
+.page-section__inner {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
+  .page-section__inner:before, .page-section__inner:after {
+    display: block;
+    content: "";
+    visibility: hidden;
+    height: 0;
+    clear: both; }
+
+.page-section__header, .page-section__content {
+  width: 100%;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  /*
+     * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
+     * if it's a user defined breakpoint
+     */
+  /*
+     * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
+     * if it's a user defined breakpoint
+     */
+  /*
+     * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
+     * if it's a user defined breakpoint
+     */
+  /*
+     * Checking if $bp equals one of the predefined breakpoints in _settings.scss or 
+     * if it's a user defined breakpoint
+     */ }
+  @media screen and (min-width: 640px) {
+    .page-section__header, .page-section__content {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 840px) {
+    .page-section__header, .page-section__content {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 1024px) {
+    .page-section__header, .page-section__content {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 1320px) {
+    .page-section__header, .page-section__content {
+      padding-left: 20px;
+      padding-right: 20px; } }
 
 /*# sourceMappingURL=app.bundle.css.map*/
