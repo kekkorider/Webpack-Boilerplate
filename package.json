@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "server": "webpack-dev-server --open --hot"
+    "start": "webpack-dev-server --open --hot"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -19,6 +19,7 @@
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "html-webpack-inline-svg-plugin": "^1.2.4",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "node-sass": "^4.5.3",
